@@ -2,7 +2,7 @@ pipeline {
 
     environment { 
 
-        registry = "manjunathin/mbr" 
+        registry = "manjunathin/mbr-influxdb" 
 
         registryCredential = 'mydocker' 
 
@@ -18,7 +18,7 @@ pipeline {
 
             steps { 
 
-                git 'https://github.com/mbr-bot/SL-DockerFile.git' 
+                git 'https://github.com/mbr-bot/influxdata-docker.git' 
 
             }
 
@@ -67,7 +67,7 @@ pipeline {
             }
 
         }
-         stage('Pull docker image from hub')
+         /*stage('Pull docker image from hub')
         {
             steps{
                 sh "docker pull $registry:$BUILD_NUMBER" 
@@ -93,7 +93,7 @@ pipeline {
 
             }
 
-        }
+        }*/
 
     }
 
